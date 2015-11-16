@@ -1,0 +1,25 @@
+<%= form_for @post do |f| %>
+	<% if @post.errors.any? %>
+		<h2><%= pluralize(@post.errors.count, "error") %> impedido este post de ahorro: </h2>
+		<ul>
+			<% @post.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+		</ul>
+	<% end %>
+
+	<%= f.label :title, "Titulo" %> <br>
+	<%= f.text_field :title %>
+
+	<br>
+	<br>
+
+	<%= f.label :content, "Escribe tu artículo aquí" %> <br>
+	<%= f.text_area :content %>
+
+	<br>
+	<br>
+
+	<%= f.submit %>
+
+<% end %>
