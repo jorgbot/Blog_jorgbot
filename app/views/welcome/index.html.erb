@@ -1,0 +1,36 @@
+<div class="banner"></div>
+<div class="wrapper wrapper_padding clearfix">
+	<div class="col-1 about homepage_content">
+		<h2>Acerca</h2>
+		<hr>
+		<p>Soy Diseñador y Desarrollador, tengo 22 años; a lo largo de mi experiencia laboral me he podido desempeñar en diferentes cargos, logrando adaptarme a cada uno de ellos y desarrollando a cabalidad las funciones para las cuales he sido contratado.</p>
+		<p>Puedes encontrarme en Twitter <a href="#">(@jorgbot)</a> escribiéndome con tal solo 140 caracteres, algunos píxeles en Dribbble <a href="#">( jorgbot)</a>, compartiendo algo de código en Github <a href="#">( jorgbot)</a> y compartiendo algunos momentos en Instagram <a href="#">( jorgbot)</a>.</p>
+		<p>Si desea contactarme me puedes escribir a este correo <a href="#">jbotelloangarita@hotmail.com</a></p>
+	</div>
+	<div class="col-2 homepage_content">
+		<h2>Artículos Escritos</h2>
+		<hr>
+		<% @posts.each do |post| %>
+			<h3><a href="#"><%= link_to post.title, post %></a></h3>
+			<p class="date"><%= post.created_at.strftime("%A, %b %d") %></p>
+		<% end %>
+	</div>
+	<div class="col-3 homepage_content">
+		<h2>Proyectos Realizados</h2>
+		<hr>
+		<h3><a href="#">Terminal Cúcuta</a></h3>
+		<p class="date">Lunes Noviembre 10th</p>
+
+		<h3><a href="#">Ediciones A&P</a></h3>
+		<p class="date">Martes Noviembre 10th</p>
+
+		<h3><a href="#">Ingles para Todos</a></h3>
+		<p class="date">Miercoles Noviembre 10th</p>
+
+		<h3><a href="#">Psychostreetstyle</a></h3>
+		<p class="date">Jueves Noviembre 10th</p>
+
+		<h3><a href="#">Recceso Jean</a></h3>
+		<p class="date">Viernes Noviembre 10th</p>
+	</div>
+</div>
