@@ -1,0 +1,25 @@
+<h1 id="page_title">Si desea contactarme me puedes escribir</h1>
+
+<div class="skinny_wrapper wrapper_padding">
+	<%= form_for @contact do |f| %>
+		<%= f.label :name, "Nombre" %><br>
+		<%= f.text_field :name, required: true %>
+
+		<br>
+
+		<%= f.label :email, "Email" %><br>
+		<%= f.email_field :email, required: true %>
+
+		<br>
+
+		<%= f.label :message, "Mensaje" %><br>
+		<%= f.text_area :message, as: :text %>
+
+		<div class="hidden">
+			<%= f.label :nickname %><br>
+			<%= f.text_field :nickname, hint: 'Dejar este campo en blanco' %>
+		</div>
+
+		<%= f.submit 'Enviar mensaje', class: "button" %>
+	<% end %>
+</div>
