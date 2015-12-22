@@ -11,6 +11,9 @@
 			<a href="<%= @project.link %>" class="project_button" target="_blank">Visita <%= @project.title %></a>
 		</div>
 	</div>
+	
+	<%= link_to "Editar", edit_project_path(@project) %>
+	<%= link_to "Eliminar", project_path(@project), method: :delete, data: { confirm: "Esta Seguro!!, ya no vuelve :(" } %>
 
 	<hr>
 </div>
