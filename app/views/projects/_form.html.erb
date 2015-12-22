@@ -1,0 +1,31 @@
+<%= form_for @project do |f| %>
+	<% if @project.errors.any? %>
+		<h2><%= pluralize(@project.errors.count, "error") %> impedido este proyecto de ahorro: </h2>
+		<ul>
+			<% @project.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+		</ul>
+	<% end %>
+
+	<%= f.label :title, "Titulo" %> <br>
+	<%= f.text_field :title %>
+
+	<br>
+	<br>
+
+	<%= f.label :description, "Escribe tu proyecto aquí" %> <br>
+	<%= f.text_area :description %>
+
+	<br>
+	<br>
+
+	<%= f.label :link, "Enlace" %> <br>
+	<%= f.text_field :link %>
+
+	<br>
+	<br>
+
+	<%= f.submit %>
+
+<% end %>
