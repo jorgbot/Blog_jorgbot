@@ -1,45 +1,14 @@
 <h1 id="page_title">Artículos Escritos</h1>
 
 <div id="posts_wrapper" class="skinny_wrapper">
-	<% @post.each do |post| %>
+	<% @posts.each do |post| %>
 		<div class="post">
 			<p class="date"><%= post.created_at.strftime('%A, %B %d') %></p>
 			<h2><a href="#"><%= link_to post.title, post %></a></h2>
 			<hr>
-	</div>
+		</div>
 	<% end %>
-	
-
-	<div class="post">
-		<p class="date">Lunes Noviembre 10th</p>
-		<h2><a href="#">Nueva vista de mi sitio</a></h2>
-		<hr>
-	</div>
-
-	<div class="post">
-		<p class="date">Lunes Noviembre 10th</p>
-		<h2><a href="#">Nueva vista de mi sitio</a></h2>
-		<hr>
-	</div>
-
-	<div class="post">
-		<p class="date">Lunes Noviembre 10th</p>
-		<h2><a href="#">Nueva vista de mi sitio</a></h2>
-		<hr>
-	</div>
-
-	<div class="post">
-		<p class="date">Lunes Noviembre 10th</p>
-		<h2><a href="#">Nueva vista de mi sitio</a></h2>
-		<hr>
-	</div>
 
 </div>
 
-<div class="pagination">
-	<span class="previous_page disabled">Anterior</span>
-	<em class="current">1</em>
-	<a rel="next" href="#">2</a>
-	<a rel="next" href="#">3</a>
-	<a class="next_page" href="#">Siguiente</a>
-</div>
+<%= will_paginate @posts %>
