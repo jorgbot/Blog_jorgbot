@@ -9,6 +9,13 @@
 		<%= markdown @post.content %>
 	</div>
 
+	<% if user_signed_in? %>
+		<div id="admin_links">
+			<%= link_to "Editar Articulo", edit_post_path(@post) %>
+			<%= link_to "Eliminar Articulo", post_path(@post), method: :delete, data: { confirm: "Esta Seguro!!, ya no vuelve :(" } %>
+		</div>
+	<% end %>
+
 	<hr>
 
 	<div id="share_box">
@@ -26,5 +33,3 @@
 	<%= render 'disqus' %>
 	
 </div>
-
-<%= link_to "Editar", edit_post_path(@post) %>

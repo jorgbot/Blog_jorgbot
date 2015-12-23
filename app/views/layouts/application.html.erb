@@ -16,7 +16,10 @@
 		<nav>
 			<%= link_to "Articulos", posts_path %>
 			<%= link_to "Proyectos", projects_path %>
-			<a href="#">Contacto</a>
+			<%= link_to "Contacto", new_contact_path %>
+			<% if user_signed_in? %>
+				<%= link_to "Salir", destroy_user_session_path, method: :delete %>
+			<% end %>
 		</nav>
 	</header>
 	
